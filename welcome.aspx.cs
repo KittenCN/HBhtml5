@@ -1,9 +1,17 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
+using ThoughtWorks.QRCode.Codec;
+using System.IO;
+using System.Web.UI.HtmlControls;
+using ZXing;
+using ZXing.Common;
+using ZXing.QrCode;
 
 public partial class welcome : System.Web.UI.Page
 {
     public string LinkString = "Server=localhost;user id=root;password=;Database=chenkuserdb37;Port=3308;charset=utf8;";
+    readonly string currentPath = System.Web.HttpContext.Current.Server.MapPath("QRCode");
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -12,7 +20,7 @@ public partial class welcome : System.Web.UI.Page
             string str_mysql = "";
             string str_PhoneNUM = "";
 
-            if(Session["UID"]!=null && Session["UID"].ToString()!=null && Session["UID"].ToString()!="")
+            if (Session["UID"] != null && Session["UID"].ToString() != null && Session["UID"].ToString() != "")
             {
                 str_mysql = "select skf26 from skt3 where skf53=1 and skf20='" + Session["UID"].ToString() + "'";
                 DataSet DSs = MySqlHelper.MySqlHelper.Query(str_mysql, LinkString);
@@ -25,13 +33,13 @@ public partial class welcome : System.Web.UI.Page
                     str_PhoneNUM = Request["PhoneNUM"].Trim();
                 }
             }
-            if(str_PhoneNUM==null || str_PhoneNUM=="")
+            if (str_PhoneNUM == null || str_PhoneNUM == "")
             {
                 str_PhoneNUM = Request["PhoneNUM"].Trim();
             }
-            
+
             lab_PhoneNUM.Text = str_PhoneNUM;
-            lab_currdate.Text = DateTime.Now.ToLongDateString().ToString();           
+            lab_currdate.Text = DateTime.Now.ToLongDateString().ToString();
 
             str_mysql = "select * from skt3 where skf53=1 and skf26='" + str_PhoneNUM + "'";
             DataSet DS = MySqlHelper.MySqlHelper.Query(str_mysql, LinkString);
@@ -98,6 +106,17 @@ public partial class welcome : System.Web.UI.Page
                 lab_hbb.Text = str_hbb;
                 lab_cc.Text = str_cc;
 
+                string sql = "select * from skt4 where skf54=1 and skf36='" + str_userid + "' ";
+                DataSet ds_sql = MySqlHelper.MySqlHelper.Query(sql, LinkString);
+                string strCardNum = "";
+                if (ds_sql.Tables[0].Rows.Count > 0)
+                {
+                    strCardNum = ds_sql.Tables[0].Rows[0]["skf39"].ToString();
+                }
+                lab_CardNum.Text = strCardNum;
+                SaveImg(currentPath, strCardNum, Create_ImgCodeI(strCardNum));
+                imgQRCode.Src = "../Ajax/QRCode.ashx?CardNum='" + strCardNum + "'";
+                //imgQRCode.ImageUrl= currentPath + "/" + strCardNum + ".png";
             }
         }
     }
@@ -212,5 +231,69 @@ public partial class welcome : System.Web.UI.Page
             System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('保存失败!')</SCRIPT>");
             Response.Write("<script language='javascript'>window.open('welcome.aspx?PhoneNUM=" + str_PhoneNUM + "','_parent');</script>");
         }
+    }
+
+    /// <summary>
+    /// 生成二维码图片
+    /// </summary>
+    /// <param name="codeNumber">要生成二维码的字符串</param>     
+    /// <param name="size">大小尺寸</param>
+    /// <returns>二维码图片</returns>
+    public Bitmap Create_ImgCode(string codeNumber, int size)
+    {
+        //创建二维码生成类
+        QRCodeEncoder qrCodeEncoder = new QRCodeEncoder();
+        //设置编码模式
+        qrCodeEncoder.QRCodeEncodeMode = QRCodeEncoder.ENCODE_MODE.BYTE;
+        //设置编码测量度
+        qrCodeEncoder.QRCodeScale = size;
+        //设置编码版本
+        qrCodeEncoder.QRCodeVersion = 0;
+        //设置编码错误纠正
+        qrCodeEncoder.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.M;
+        //生成二维码图片
+        System.Drawing.Bitmap image = qrCodeEncoder.Encode(codeNumber);
+        return image;
+    }
+
+    /// <summary>
+    /// 保存图片
+    /// </summary>
+    /// <param name="strPath">保存路径</param>
+    /// <param name="img">图片</param>
+    public void SaveImg(string strPath, string strFileName, Bitmap img)
+    {
+        //保存图片到目录
+        if (Directory.Exists(strPath))
+        {
+            //文件名称
+            string guid = strFileName + ".png";
+            img.Save(strPath + "/" + guid, System.Drawing.Imaging.ImageFormat.Png);
+        }
+        else
+        {
+            //当前目录不存在，则创建
+            Directory.CreateDirectory(strPath);
+        }
+    }
+
+    public Bitmap Create_ImgCodeI(string codeNumber)
+    {
+        EncodingOptions options = null;
+        BarcodeWriter writer = null;
+
+        options = new EncodingOptions
+        {
+            //DisableECI = true,  
+            //CharacterSet = "UTF-8",  
+            Width = 150,
+            Height = 50
+        };
+        writer = new BarcodeWriter();
+        writer.Format = BarcodeFormat.ITF;
+        writer.Options = options;
+
+        Bitmap bitmap = writer.Write(codeNumber);
+        return bitmap;
     }
 }

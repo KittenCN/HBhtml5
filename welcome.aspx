@@ -6,6 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title>霓虹儿童世界欢迎您</title>
+<%--<link href="nivo-slider-index.css" rel="stylesheet" />--%>
 <style type="text/css">
 <!--
 body {
@@ -280,7 +281,9 @@ left {
               ，您的哈宝币当前余额为：<asp:Label ID="lab_hbb" runat="server" Text="999999.99"></asp:Label>
             </p>
           <p>您的储值当前余额为：<asp:Label ID="lab_cc" runat="server" Text="999999.99"></asp:Label>
-&nbsp; 元</p></td>
+&nbsp; 元</p>
+            <p>您的虚拟卡号为：<asp:Label ID="lab_CardNum" runat="server" Text="000000"></asp:Label></p>
+        </td>
         <td>&nbsp;</td>
       </tr>
       <tr>
@@ -306,8 +309,10 @@ left {
       <tr>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td width="87">&nbsp;</td>
-        <td width="156">&nbsp;</td>
+        <td width="87">一维码:</td>
+        <td width="156">
+           <img src="../Ajax/QRCode.ashx?CardNum=0"  id="imgQRCode" runat="server" style="margin-top: 0px; vertical-align: top; cursor: pointer; width: 150px; height: 50px; margin-bottom: 0px;" />
+          </td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
@@ -444,70 +449,7 @@ left {
         <td>&nbsp;</td>
         <td>&nbsp;</td>
       </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td class="auto-style3">&nbsp;</td>
-        <td colspan="2">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td class="auto-style3">&nbsp;</td>
-        <td colspan="2">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td class="auto-style3">&nbsp;</td>
-        <td colspan="2">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td class="auto-style3">&nbsp;</td>
-        <td colspan="2">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td class="auto-style3">&nbsp;</td>
-        <td colspan="2">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td class="auto-style3">&nbsp;</td>
-        <td colspan="2">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td class="auto-style3">&nbsp;</td>
-        <td colspan="2">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-    </table>
+      </table>
     </form>
    </header>
   <footer>

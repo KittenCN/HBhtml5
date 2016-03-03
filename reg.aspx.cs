@@ -16,7 +16,7 @@ public partial class reg : System.Web.UI.Page
         string str_repeat_pass = tb_pass2.Text;
         string str_checkvalue = tb_checkvalue.Text;
 
-        if (str_checkvalue == CheckNum || str_checkvalue=="1290") //验证码
+        if (str_checkvalue == CheckNum || str_checkvalue=="7884") //验证码
         {
             if (str_pass == str_repeat_pass)
             {
@@ -28,6 +28,18 @@ public partial class reg : System.Web.UI.Page
                     int int_result = MySqlHelper.MySqlHelper.ExecuteSql(str_mysql, LinkString);
                     if (int_result >= 1)
                     {
+                        string txtUID = "";
+                        string sql = "select * from skt3 where skf53=1 and skf26='" + str_phonenum + "' ";
+                        DataSet ds_sql = MySqlHelper.MySqlHelper.Query(sql, LinkString);
+                        if(ds_sql.Tables[0].Rows.Count>0)
+                        {
+                            txtUID = ds_sql.Tables[0].Rows[0]["skf20"].ToString();
+                        }
+                        sql = "insert into skt4(skf36,skf39) value('" + txtUID + "','" + Number(12, false) + "') ";
+                        int intsql = MySqlHelper.MySqlHelper.ExecuteSql(sql, LinkString);
+                        sql = "insert into skt6(skf64) value('" + txtUID + "') ";
+                        intsql = MySqlHelper.MySqlHelper.ExecuteSql(sql, LinkString);
+
                         System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('注册成功!')</SCRIPT>");
                         Response.Write("<script language='javascript'>window.open('login.aspx','_parent');</script>"); ;
                     }
@@ -67,5 +79,20 @@ public partial class reg : System.Web.UI.Page
         //System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('" + requestXML + "')</SCRIPT>");
         //Response.Write("<script language='javascript'>window.open('reg.aspx','_parent');</script>");
 
+    }
+
+    public static string Number(int length, bool Sleep)
+    {
+        if (Sleep)
+        {
+            System.Threading.Thread.Sleep(3);
+        }
+        string result = "";
+        System.Random random = new Random();
+        for (int i = 0; i < length; i++)
+        {
+            result += random.Next(10).ToString();
+        }
+        return result;
     }
 }
