@@ -10,7 +10,7 @@ public partial class money : System.Web.UI.Page
         {
             string str_userid = Session["UID"].ToString();
 
-            string str_mysql = "SELECT skf77 AS '储值', skf79 AS '积分', skf81 AS '赠送积分',skf82 AS '生成时间' FROM skt7 WHERE skf73='" + str_userid + "'";
+            string str_mysql = "SELECT skf77-skf76 AS '增加储值', skf79-skf78 AS '增加积分', skf81-skf80 AS '增加赠送积分',skf82 AS '生成时间' FROM skt7 WHERE skf73='" + str_userid + "'";
             DataSet DS = MySqlHelper.MySqlHelper.Query(str_mysql, LinkString);
             if (DS.Tables[0].Rows.Count > 0 && DS.Tables[0].Rows[0].ItemArray[0].ToString() != null)
             {
