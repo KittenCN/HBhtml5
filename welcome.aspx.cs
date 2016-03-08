@@ -71,19 +71,19 @@ public partial class welcome : System.Web.UI.Page
                 DataSet DS_money = MySqlHelper.MySqlHelper.Query(str_mysql_money, LinkString);
                 if (DS_money.Tables[0].Rows.Count > 0 && DS_money.Tables[0].Rows[0].ItemArray[0].ToString() != null)
                 {
-                    str_hbb = DS_money.Tables[0].Rows[0].ItemArray[0].ToString();
-                }
-                else
-                {
-                    str_hbb = "0";
-                }
-                if (DS_money.Tables[0].Rows.Count > 0 && DS_money.Tables[0].Rows[0].ItemArray[1].ToString() != null)
-                {
-                    str_cc = DS_money.Tables[0].Rows[0].ItemArray[1].ToString();
+                    str_cc = DS_money.Tables[0].Rows[0].ItemArray[0].ToString();
                 }
                 else
                 {
                     str_cc = "0";
+                }
+                if (DS_money.Tables[0].Rows.Count > 0 && DS_money.Tables[0].Rows[0].ItemArray[1].ToString() != null)
+                {
+                    str_hbb = DS_money.Tables[0].Rows[0].ItemArray[1].ToString();
+                }
+                else
+                {
+                    str_hbb = "0";
                 }
 
                 tb_username.Text = str_username;
@@ -173,19 +173,19 @@ public partial class welcome : System.Web.UI.Page
             DataSet DS_money = MySqlHelper.MySqlHelper.Query(str_mysql_money, LinkString);
             if (DS_money.Tables[0].Rows.Count > 0 && DS_money.Tables[0].Rows[0].ItemArray[0].ToString() != null)
             {
-                str_hbb = DS_money.Tables[0].Rows[0].ItemArray[0].ToString();
-            }
-            else
-            {
-                str_hbb = "0";
-            }
-            if (DS_money.Tables[0].Rows.Count > 0 && DS_money.Tables[0].Rows[0].ItemArray[1].ToString() != null)
-            {
-                str_cc = DS_money.Tables[0].Rows[0].ItemArray[1].ToString();
+                str_cc = DS_money.Tables[0].Rows[0].ItemArray[0].ToString();
             }
             else
             {
                 str_cc = "0";
+            }
+            if (DS_money.Tables[0].Rows.Count > 0 && DS_money.Tables[0].Rows[0].ItemArray[1].ToString() != null)
+            {
+                str_hbb = DS_money.Tables[0].Rows[0].ItemArray[1].ToString();
+            }
+            else
+            {
+                str_hbb = "0";
             }
 
             tb_username.Text = str_username;
