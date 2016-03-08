@@ -17,7 +17,7 @@ public partial class welcome : System.Web.UI.Page
     {
         Config cg = new Config();
         LinkString = cg.GetLinkString();
-
+        
         if (!IsPostBack)
         { 
             string str_mysql = "";
@@ -226,8 +226,26 @@ public partial class welcome : System.Web.UI.Page
         int int_result = MySqlHelper.MySqlHelper.ExecuteSql(str_mysql, LinkString);
         if (int_result >= 1)
         {
-            System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('保存成功!')</SCRIPT>");
-            Response.Write("<script language='javascript'>window.open('welcome.aspx?PhoneNUM=" + str_PhoneNUM + "','_parent');</script>");
+            if(tb_Pass.Text!="")
+            {
+                str_mysql = "update skt4 set skf95='" + tb_Pass.Text + "' where skf54=1 and skf36='" + str_userid + "'";
+                int_result = MySqlHelper.MySqlHelper.ExecuteSql(str_mysql, LinkString);
+                if(int_result>=1)
+                {
+                    System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('保存成功!')</SCRIPT>");
+                    Response.Write("<script language='javascript'>window.open('welcome.aspx?PhoneNUM=" + str_PhoneNUM + "','_parent');</script>");
+                }
+                else
+                {
+                    System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('保存失败!')</SCRIPT>");
+                    Response.Write("<script language='javascript'>window.open('welcome.aspx?PhoneNUM=" + str_PhoneNUM + "','_parent');</script>");
+                }
+            }
+            else
+            {
+                System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('保存成功!')</SCRIPT>");
+                Response.Write("<script language='javascript'>window.open('welcome.aspx?PhoneNUM=" + str_PhoneNUM + "','_parent');</script>");
+            }
         }
         else
         {
@@ -271,7 +289,8 @@ public partial class welcome : System.Web.UI.Page
         {
             //文件名称
             string guid = strFileName + ".png";
-            img.Save(strPath + "/" + guid, System.Drawing.Imaging.ImageFormat.Png);
+            Bitmap bm = new Bitmap(img);
+            bm.Save(strPath + "/" + guid, System.Drawing.Imaging.ImageFormat.Png);
         }
         else
         {

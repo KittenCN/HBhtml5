@@ -339,7 +339,7 @@ left {
         <td class="auto-style3">&nbsp;</td>
         <td class="auto-style1">出生年月：</td>
         <td>
-            <asp:TextBox ID="tb_userbirthday" runat="server"></asp:TextBox>
+            <asp:TextBox ID="tb_userbirthday" runat="server" type="date"></asp:TextBox>
           </td>
         <td class="auto-style2">手机号：
           </td>
@@ -364,11 +364,12 @@ left {
         <td class="auto-style3">&nbsp;</td>
         <td class="auto-style1">孩子生日：</td>
         <td>
-            <asp:TextBox ID="tb_userchrbirthday" runat="server"></asp:TextBox>
+            <asp:TextBox ID="tb_userchrbirthday" runat="server" type="date"></asp:TextBox>
           </td>
-        <td class="auto-style2">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td class="auto-style2">消费密码:</td>
+        <td>
+            <asp:TextBox ID="tb_Pass" runat="server" TextMode="Password"></asp:TextBox>
+          </td>
         <td>&nbsp;</td>
       </tr>
       <tr>

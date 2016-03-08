@@ -84,6 +84,16 @@ public partial class reg : System.Web.UI.Page
         SMS.SMS smssender = new SMS.SMS();
 
         CheckNum = smssender.send_reg_sms(2, mobile);
+        if (CheckNum.Substring(0, 5) != "Error:")
+        {
+            System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('发送成功,请注意查收!')</SCRIPT>");
+            Response.Write("<script language='javascript'>window.open('reg.aspx','_parent');</script>");
+        }
+        else
+        {
+            System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('短信发送失败,失败信息为:" + CheckNum + "')</SCRIPT>");
+            Response.Write("<script language='javascript'>window.open('reg.aspx','_parent');</script>");
+        }
         //System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('" + requestXML + "')</SCRIPT>");
         //Response.Write("<script language='javascript'>window.open('reg.aspx','_parent');</script>");
 
