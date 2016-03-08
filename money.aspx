@@ -157,15 +157,15 @@ left {
 <div>
   <header>
       <form id="form1" runat="server">
-    <table width="1300" border="0" background="image/member.jpg">
+    <table  style="width:1300px;"  border="0" background="image/member.jpg">
       <tr>
-        <td width="88">&nbsp;</td>
-        <td width="334">&nbsp;</td>
-        <td width="78">&nbsp;</td>
-        <td width="130">&nbsp;</td>
-        <td width="211">&nbsp;</td>
-        <td width="164">&nbsp;</td>
-        <td width="265">&nbsp;</td>
+        <td style="width:88px">&nbsp;</td>
+        <td style="width:334px">&nbsp;</td>
+        <td style="width:78px">&nbsp;</td>
+        <td style="width:130px">&nbsp;</td>
+        <td style="width:211px">&nbsp;</td>
+        <td style="width:164px">&nbsp;</td>
+        <td style="width:265px">&nbsp;</td>
       </tr>
       <tr>
         <td>&nbsp;</td>
