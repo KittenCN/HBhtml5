@@ -3,11 +3,12 @@ using System.Data;
 
 public partial class reg : System.Web.UI.Page
 {
-    public string LinkString = "Server=localhost;user id=root;password=;Database=chenkuserdb37;Port=3308;charset=utf8;";
+    public string LinkString;
     public static string CheckNum = "1q2w3e4r";
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Config cg = new Config();
+        LinkString = cg.GetLinkString();
     }
     public void Reg(object sender,EventArgs e)
     {

@@ -10,11 +10,14 @@ using ZXing.QrCode;
 
 public partial class welcome : System.Web.UI.Page
 {
-    public string LinkString = "Server=localhost;user id=root;password=;Database=chenkuserdb37;Port=3308;charset=utf8;";
+    public string LinkString;
     readonly string currentPath = System.Web.HttpContext.Current.Server.MapPath("QRCode");
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        Config cg = new Config();
+        LinkString = cg.GetLinkString();
+
         if (!IsPostBack)
         { 
             string str_mysql = "";

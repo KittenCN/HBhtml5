@@ -3,11 +3,13 @@ using System.Data;
 
 public partial class Login : System.Web.UI.Page
 {
-    public string LinkString = "Server=localhost;user id=root;password=;Database=chenkuserdb37;Port=3308;charset=utf8;";
+    public string LinkString;
 
     protected void Page_Load(object sender, EventArgs e)
     {
         Session["UID"] = null;
+        Config cg = new Config();
+        LinkString = cg.GetLinkString();
     }
 
     public void btn_Login(object sender, EventArgs e)
