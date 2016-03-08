@@ -63,7 +63,7 @@ public partial class welcome : System.Web.UI.Page
                 }
                 else
                 {
-                    str_userlevel = "";
+                    str_userlevel = "未分配等级";
                 }
                 string str_hbb = "0";
                 string str_cc = "0";
@@ -165,7 +165,7 @@ public partial class welcome : System.Web.UI.Page
             }
             else
             {
-                str_userlevel = "";
+                str_userlevel = "未分配等级";
             }
             string str_hbb = "0";
             string str_cc = "0";
