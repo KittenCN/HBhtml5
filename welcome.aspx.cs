@@ -308,7 +308,7 @@ public partial class welcome : System.Web.UI.Page
         {
             //DisableECI = true,  
             //CharacterSet = "UTF-8",  
-            Width = 150,
+            Width = 300,
             Height = 50
         };
         writer = new BarcodeWriter();

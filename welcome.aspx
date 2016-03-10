@@ -155,6 +155,14 @@ left {
     .auto-style3 {
         width: 324px;
     }
+    .auto-style4 {
+        width: 156px;
+    }
+    .auto-style5 {
+        cursor: pointer;
+        width: 390px;
+        height: 50px;
+    }
 -->
 </style><!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -310,19 +318,15 @@ left {
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td width="87">一维码:</td>
-        <td width="156">
-           <img src="../Ajax/QRCode.ashx?CardNum=0"  id="imgQRCode" runat="server" style="margin-top: 0px; vertical-align: top; cursor: pointer; width: 150px; height: 50px; margin-bottom: 0px;" />
-          </td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td class="auto-style4" colspan="3">
+           <img src="../Ajax/QRCode.ashx?CardNum=0"  id="imgQRCode" width="300" height="50" runat="server" style="margin-top: 0px; vertical-align: top; margin-bottom: 0px;" class="auto-style5" />
+          </td>        
       </tr>
       <tr>
         <td>&nbsp;</td>
         <td class="auto-style3">&nbsp;</td>
         <td align="left" class="auto-style1">姓名：</td>
-        <td align="left">
+        <td align="left" class="auto-style4">
             <asp:TextBox ID="tb_username" runat="server"></asp:TextBox>
           </td>
         <td class="auto-style2">性别：</td>
@@ -338,7 +342,7 @@ left {
         <td>&nbsp;</td>
         <td class="auto-style3">&nbsp;</td>
         <td class="auto-style1">出生年月：</td>
-        <td>
+        <td class="auto-style4">
             <asp:TextBox ID="tb_userbirthday" runat="server" type="date"></asp:TextBox>
           </td>
         <td class="auto-style2">手机号：
@@ -350,7 +354,7 @@ left {
         <td>&nbsp;</td>
         <td class="auto-style3">&nbsp;</td>
         <td class="auto-style1">地址:</td>
-        <td>
+        <td class="auto-style4">
             <asp:TextBox ID="tb_useradd" runat="server"></asp:TextBox>
           </td>
         <td class="auto-style2">孩子姓名：</td>
@@ -363,7 +367,7 @@ left {
         <td>&nbsp;</td>
         <td class="auto-style3">&nbsp;</td>
         <td class="auto-style1">孩子生日：</td>
-        <td>
+        <td class="auto-style4">
             <asp:TextBox ID="tb_userchrbirthday" runat="server" type="date"></asp:TextBox>
           </td>
         <td class="auto-style2">消费密码:</td>
@@ -385,7 +389,7 @@ left {
         <td>&nbsp;</td>
         <td class="auto-style3">&nbsp;</td>
         <td align="center" class="auto-style1">&nbsp;</td>
-        <td align="center">&nbsp;</td>
+        <td align="center" class="auto-style4">&nbsp;</td>
         <td align="center" class="auto-style2">&nbsp;</td>
         <td align="center">&nbsp;</td>
         <td>&nbsp;</td>
@@ -395,7 +399,7 @@ left {
         <td>&nbsp;</td>
         <td class="auto-style3">&nbsp;</td>
         <td class="auto-style1">&nbsp;</td>
-        <td>
+        <td class="auto-style4">
             <asp:Button ID="btn_save" runat="server" Text="保存" OnClick="btn_save_Click" />
           </td>
         <td class="auto-style2">&nbsp;</td>
