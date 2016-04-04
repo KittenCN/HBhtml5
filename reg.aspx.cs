@@ -45,6 +45,7 @@ public partial class reg : System.Web.UI.Page
 
                             System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('注册成功!')</SCRIPT>");
                             Response.Write("<script language='javascript'>window.open('login.aspx','_parent');</script>"); ;
+
                         }
                         else
                         {

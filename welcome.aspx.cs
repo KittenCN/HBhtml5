@@ -7,16 +7,19 @@ using System.Web.UI.HtmlControls;
 using ZXing;
 using ZXing.Common;
 using ZXing.QrCode;
+using EnDeCode;
 
 public partial class welcome : System.Web.UI.Page
 {
     public string LinkString;
     readonly string currentPath = System.Web.HttpContext.Current.Server.MapPath("QRCode");
+    public string pKey = "";
 
     protected void Page_Load(object sender, EventArgs e)
     {
         Config cg = new Config();
         LinkString = cg.GetLinkString();
+        pKey = cg.GetpKey();
         
         if (!IsPostBack)
         { 
@@ -228,7 +231,9 @@ public partial class welcome : System.Web.UI.Page
         {
             if(tb_Pass.Text!="")
             {
-                str_mysql = "update skt4 set skf95='" + tb_Pass.Text + "' where skf54=1 and skf36='" + str_userid + "'";
+                EnDeCode.EnDeCode edc = new EnDeCode.EnDeCode();
+                string EnPass = edc.GetXOR(edc.GetMD5(edc.GetASCII(tb_Pass.Text)));
+                str_mysql = "update skt4 set skf95='" + EnPass + "' where skf54=1 and skf36='" + str_userid + "'";
                 int_result = MySqlHelper.MySqlHelper.ExecuteSql(str_mysql, LinkString);
                 if(int_result>=1)
                 {
