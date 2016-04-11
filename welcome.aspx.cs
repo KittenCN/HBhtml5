@@ -120,7 +120,7 @@ public partial class welcome : System.Web.UI.Page
                     strCardNum = ds_sql.Tables[0].Rows[0]["skf39"].ToString();
                 }
                 lab_CardNum.Text = strCardNum;
-                SaveImg(currentPath, strCardNum, Create_ImgCodeI(strCardNum));
+                //SaveImg(currentPath, strCardNum, Create_ImgCodeI(strCardNum));
                 imgQRCode.Src = "../Ajax/QRCode.ashx?CardNum='" + strCardNum + "'";
                 //imgQRCode.ImageUrl= currentPath + "/" + strCardNum + ".png";
             }
