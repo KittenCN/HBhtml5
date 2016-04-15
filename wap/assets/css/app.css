@@ -1,0 +1,51 @@
+body {
+  font-size: 1.4rem;
+}
+.app-input{
+  border: 1px solid #f44e80 !important;
+  color:#f44e80 !important;
+}
+.app-padding-zero{
+    padding:0 !important;
+}
+.app-margin-zero{
+    margin:0 !important;
+}
+.app-margin-two{
+    margin:3px !important;
+}
+.app-margin-side{
+    margin-left:25px;
+    margin-right:25px;
+}
+.app-padding-side{
+    padding-left:25px;
+    padding-right:25px;
+}
+.app-align-right{
+    text-align: right;
+}
+.app-align-center{
+    text-align: center;
+}
+.app-reg-text{
+    height:15px;
+    font-size: 1.2rem;
+    color:#f44e80;
+}
+.app-reg-input{
+    height:15px !important;
+    line-height:15px;
+    font-size: 1.2rem;
+    border: 1px solid #f44e80 !important;
+    color:#f44e80 !important;
+}
+.app-reg-margin{
+    margin:3px !important;
+}
+table{
+    margin:0 auto;
+}
+.app-top{
+    vertical-align: text-top;
+}
