@@ -9,6 +9,12 @@ public partial class reg : System.Web.UI.Page
     {
         Config cg = new Config();
         LinkString = cg.GetLinkString();
+
+        if(Session["RegPhoneNum"]!=null && Session["RegPhoneNum"].ToString()!=null && Session["RegPhoneNum"].ToString()!="")
+        {
+            tb_phonenum.Text = Session["RegPhoneNum"].ToString();
+            Session["RegPhoneNum"] = null;
+        }
     }
     public void Reg(object sender,EventArgs e)
     {
@@ -80,20 +86,28 @@ public partial class reg : System.Web.UI.Page
 
     protected void btn_checkvalue_Click(object sender, EventArgs e)
     {
-
-        string mobile = tb_phonenum.Text;
-        SMS.SMS smssender = new SMS.SMS();
-
-        CheckNum = smssender.send_reg_sms(2, mobile);
-        if (CheckNum.Substring(0, 5) != "Error:")
+        if (tb_phonenum.Text==null || tb_phonenum.Text=="")
         {
-            System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('发送成功,请注意查收!')</SCRIPT>");
+            System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('手机号码不能为空!')</SCRIPT>");
             Response.Write("<script language='javascript'>window.open('reg.aspx','_parent');</script>");
         }
         else
         {
-            System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('短信发送失败,失败信息为:" + CheckNum + "')</SCRIPT>");
-            Response.Write("<script language='javascript'>window.open('reg.aspx','_parent');</script>");
+            Session["RegPhoneNum"] = tb_phonenum.Text;
+            string mobile = tb_phonenum.Text;
+            SMS.SMS smssender = new SMS.SMS();
+
+            CheckNum = smssender.send_reg_sms(2, mobile);
+            if (CheckNum.Substring(0, 5) != "Error:")
+            {
+                System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('发送成功,请注意查收!')</SCRIPT>");
+                Response.Write("<script language='javascript'>window.open('reg.aspx','_parent');</script>");
+            }
+            else
+            {
+                System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('短信发送失败,失败信息为:" + CheckNum + "')</SCRIPT>");
+                Response.Write("<script language='javascript'>window.open('reg.aspx','_parent');</script>");
+            }
         }
         //System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('" + requestXML + "')</SCRIPT>");
         //Response.Write("<script language='javascript'>window.open('reg.aspx','_parent');</script>");
