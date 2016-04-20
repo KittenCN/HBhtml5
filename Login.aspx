@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Login, App_Web_tkm0d2ye" %>
 
 <!DOCTYPE html>
 
@@ -116,6 +116,18 @@ footer {
 /*HTML 5 支持 - 将新 HTML 5 标签设置为 display:block，以使浏览器知道如何正确呈现标签。 */
 header, section, footer, aside, article, figure {
 	display: block;
+}
+.app-login-label{
+    text-align:right;
+    font-size:large;
+    font-weight:bold;
+    color:#f44e80;
+    padding-right:1em;
+}
+.app-input{
+  border: 1px solid #f44e80;
+  color:#f44e80;
+  line-height:22px;
 }
 -->
 </style><!--[if lt IE 9]>
@@ -242,19 +254,13 @@ header, section, footer, aside, article, figure {
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td rowspan="2"><input name="tf_PhoneNUM" type="text" id="tf_PhoneNUM" size="30"></td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td class="app-login-label">手机号</td>
+        <td><input class="app-input" name="tf_PhoneNUM" type="text" id="tf_PhoneNUM" size="30" /></td>
         <td>&nbsp;</td>
       </tr>
       <tr>
-        <td height="18">&nbsp;</td>
-        <td align="center"></td>
-        <td align="center">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
         <td>&nbsp;</td>
       </tr>
       <tr>
@@ -265,8 +271,8 @@ header, section, footer, aside, article, figure {
       </tr>
       <tr>
         <td height="21">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td><input name="tf_Pass" type="password" id="tf_Pass" size="30"></td>
+        <td class="app-login-label">密码</td>
+        <td><input class="app-input" name="tf_Pass" type="password" id="tf_Pass" size="30" /></td>
         <td>&nbsp;</td>
       </tr>
       <tr>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Login, App_Web_b3q5ovkd" %>
 <!doctype html>
 <html class="no-js">
 <head>
@@ -50,14 +50,14 @@
                 <td colspan="4">
                     <div class="am-form am-form-horizontal">
                         <div class="am-form-group app-margin-two">
-                            <label for="tf_PhoneNUM" class="am-u-sm-3 am-form-label app-padding-zero app-align-right">手机号</label>
+                            <label for="tf_PhoneNUM" class="am-u-sm-3 am-form-label app-padding-zero app-align-right app-reg-text">手机号</label>
                             <div class="am-u-sm-9">
                                 <input type="text" id="tf_PhoneNUM" placeholder="" class="app-input app-padding-zero" name="tf_PhoneNUM">
                             </div>
                         </div>
 
                         <div class="am-form-group app-margin-two">
-                            <label for="tf_Pass" class="am-u-sm-3 am-form-label app-padding-zero app-align-right">密码</label>
+                            <label for="tf_Pass" class="am-u-sm-3 am-form-label app-padding-zero app-align-right app-reg-text">密码</label>
                             <div class="am-u-sm-9">
                                 <input type="password" id="tf_Pass" placeholder="" class="app-input app-padding-zero" name="tf_Pass">
                             </div>

@@ -14,7 +14,7 @@ namespace SMS
     {
         string userid = "410";
         string account = "mhkj";
-        string password = "mhkj123456";
+        string password = "mhkj_654317";
 
         public SMS()
         { }
