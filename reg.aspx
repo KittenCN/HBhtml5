@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="reg.aspx.cs" Inherits="reg" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="reg, App_Web_tkm0d2ye" %>
 
 <!DOCTYPE html>
 
