@@ -27,7 +27,11 @@ public partial class money : System.Web.UI.Page
             }
             else
             {
-                System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('没有查询到数据!')</SCRIPT>");
+                //System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('没有查询到数据!')</SCRIPT>");
+                str_mysql = "SELECT '-' AS '增加储值','-' AS '生成时间'";
+                DS = MySqlHelper.MySqlHelper.Query(str_mysql, LinkString);
+                gv_cc.DataSource = DS;
+                gv_cc.DataBind();
             }
 
             str_mysql = "select skf26 from skt3 where skf53=1 and skf20='" + Session["UID"].ToString() + "'";
