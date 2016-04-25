@@ -323,4 +323,10 @@ public partial class welcome : System.Web.UI.Page
         Bitmap bitmap = writer.Write(codeNumber);
         return bitmap;
     }
+
+    protected void btn_pass_Click(object sender, EventArgs e)
+    {
+        Server.Transfer("pass.aspx");
+        //Response.Write("<script language='javascript'>window.open('pass.aspx'_parent');</script>");
+    }
 }

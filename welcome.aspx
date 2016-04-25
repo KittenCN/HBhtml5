@@ -263,7 +263,9 @@ left {
       <tr>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td colspan="2">&nbsp;</td>
+        <td colspan="2">
+            <asp:Button ID="btn_pass" runat="server" Text="修改登录密码" OnClick="btn_pass_Click" />
+          </td>
         <td align="right">&nbsp;</td>
         <td align="right">&nbsp;</td>
         <td align="right"> 

@@ -88,6 +88,9 @@
             <td id="app-content">
                    <div id="app-first">
                         <ul class="am-list">
+                          <li class="app-padding-side">
+                              <asp:Button ID="btn_pass" runat="server" Text="修改登录密码" OnClick="btn_pass_Click" />
+                          </li>
                           <li class="app-align-right">
                               <div>
                                   <asp:Label ID="lab_PhoneNUM" runat="server" Text="PhoneNUM"></asp:Label><a href="login.aspx">【退出】</a>

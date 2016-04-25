@@ -1,21 +1,23 @@
-﻿<%@ page language="C#" autoeventwireup="true" inherits="Login" CodeFile="Login.aspx.cs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="pass.aspx.cs" Inherits="pass" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>霓虹儿童世界欢迎您</title>
+    <title>霓虹儿童世界欢迎您</title>
+</head>
 <style type="text/css">
 <!--
 body {
 	background-color: #FFFFFF;
 	margin: 0;
 	padding: 0;
-	color: #000;
+	color: #333;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: small;
 	line-height: normal;
+	text-align: left;
 }
 /* ~~ 元素/标签选择器 ~~ */
 ul, ol, dl { /* 由于浏览器之间的差异，最佳做法是在列表中将填充和边距都设置为零。为了保持一致，您可以在此处指定所需的数值，也可以在列表包含的列表项（LI、DT 和 DD）中指定所需的数值。请记住，除非编写一个更具体的选择器，否则，在此处进行的设置将层叠到 .nav 列表。 */
@@ -29,11 +31,10 @@ h1, h2, h3, h4, h5, h6, p {
 }
 a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认蓝色边框（当该图像包含在链接中时） */
 	border: none;
-	text-align: center;
 }
 /* ~~ 站点链接的样式必须保持此顺序，包括用于创建悬停效果的选择器组在内。 ~~ */
 a:link {
-	color: #42413C;
+	color: #CCCCCC;
 	text-decoration: underline; /* 除非将链接设置成极为独特的外观样式，否则最好提供下划线，以便可从视觉上快速识别 */
 }
 a:visited {
@@ -51,6 +52,7 @@ a:hover, a:active, a:focus { /* 此组选择器将为键盘导航者提供与鼠
 	margin-right: auto;
 	margin-bottom: 0;
 	margin-left: auto;
+	text-align: left;
 }
 /* ~~ 标题未指定宽度。它将扩展到布局的完整宽度。 ~~ */
 header {
@@ -116,190 +118,69 @@ footer {
 /*HTML 5 支持 - 将新 HTML 5 标签设置为 display:block，以使浏览器知道如何正确呈现标签。 */
 header, section, footer, aside, article, figure {
 	display: block;
+	text-align: left;
 }
-.app-login-label{
-    text-align:right;
-    font-size:large;
-    font-weight:bold;
-    color:#f44e80;
-    padding-right:1em;
+.font1 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: small;
+	color: #000;
 }
-.app-input{
-  border: 1px solid #f44e80;
-  color:#f44e80;
-  line-height:22px;
+.container header form table tr td {
+	text-align: right;
 }
+.container header form table {
+	text-align: left;
+}
+.container header form table -a {
+	text-align: left;
+}
+table {
+	text-align: left;
+}
+form table tr td {
+	text-align: left;
+}
+.container header form table tr td p {
+	text-align: left;
+}
+left {
+	text-align: left;
+}
+    .auto-style1 {
+        margin-left: 0px;
+    }
 -->
 </style><!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-
-    <script type="text/javascript"> 
-        function save() 
-        {
-            document.write("Hello World!");
-            window.document.all("btn_Login").click();
-        } 
-    </script>
-
-</head>
+<![endif]--></head>
 
 <body>
-
-<div class="container">
+<div>
   <header>
-  <!--<form action="welcome.html"> -->
-  <form id="frm_login"  runat="server">
-    <table width="100%" border="0" background="image/login-m.jpg">
+  <form runat="server">
+    <table width="1300" border="0" background="image/member.jpg">
       <tr>
-        <td width="33%">&nbsp;</td>
-        <td width="9%">&nbsp;</td>
-        <td width="22%">&nbsp;</td>
-        <td width="36%">&nbsp;</td>
+        <td width="95">&nbsp;</td>
+        <td width="327">&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <td width="89">&nbsp;</td>
+        <td width="29">&nbsp;</td>
+        <td width="211">&nbsp;</td>
+        <td width="219">&nbsp;</td>
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td rowspan="2"><label for="textfield"></label></td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td class="app-login-label">手机号</td>
-        <td><input class="app-input" name="tf_PhoneNUM" type="text" id="tf_PhoneNUM" size="30" /></td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td align="center">&nbsp;</td>
-        <td align="center">&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td height="21">&nbsp;</td>
-        <td class="app-login-label">密码</td>
-        <td><input class="app-input" name="tf_Pass" type="password" id="tf_Pass" size="30" /></td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td height="66">&nbsp;</td>
-        <td colspan="2" align="center">
-            <input type="image" name="imageField" id="imageField" src="image/login.jpg" runat="server" onserverclick="btn_Login"/>
-            <a href="reg.aspx"><img src="image/reg.jpg" width="154" height="50" name="img_reg" id="img_reg" runat="server" /></a></td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
         <td>&nbsp;</td>
         <td colspan="2">&nbsp;</td>
         <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
       </tr>
       <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
@@ -308,10 +189,7 @@ header, section, footer, aside, article, figure {
       <tr>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
+        <td colspan="2">&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
@@ -320,10 +198,7 @@ header, section, footer, aside, article, figure {
       <tr>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
+        <td colspan="2">&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
@@ -332,10 +207,7 @@ header, section, footer, aside, article, figure {
       <tr>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
+        <td colspan="2">&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
@@ -344,6 +216,137 @@ header, section, footer, aside, article, figure {
       <tr>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
+        <td colspan="5" rowspan="5"><img src="image/top1.jpg" width="578" height="101" usemap="#Map"></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="18">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <td align="right">&nbsp;</td>
+        <td align="right">&nbsp;</td>
+        <td align="right">&nbsp;<asp:Label ID="lab_PhoneNUM" runat="server" Text="PhoneNUM"></asp:Label>
+            <a href="login.aspx">【退出】</a></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="2"><strong>修改密码</strong></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="18">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td align="left">请输入旧密码：</td>
+        <td colspan="2" align="left">
+            <asp:TextBox ID="tb_oldpass" runat="server"  TextMode="Password"></asp:TextBox>
+          </td>
+        <td align="left">&nbsp;</td>
+        <td align="left">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr><br>
+	 <tr>
+        <td height="18">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td align="left">请输入新密码：</td>
+        <td colspan="2" align="left">
+            <asp:TextBox ID="tb_newpass" runat="server"  TextMode="Password"></asp:TextBox>
+         </td>
+        <td align="left">&nbsp;</td>
+        <td align="left">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="18">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td align="left">请重复密码：</td>
+        <td colspan="2" align="left">
+            <asp:TextBox ID="tb_renewpass" runat="server"  TextMode="Password"></asp:TextBox>
+          </td>
+        <td align="left">&nbsp;</td>
+        <td align="left">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td align="left">&nbsp;</td>
+        <td align="left">&nbsp;</td>
+        <td align="left">&nbsp;</td>
+        <td align="left">&nbsp;</td>
+        <td align="left">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td align="left">&nbsp;</td>
+        <td width="176" rowspan="2" align="left">&nbsp;<asp:Button ID="btn_ok" runat="server" Text="确认" OnClick="btn_ok_Click" />
+          &nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btn_cancel" runat="server" CssClass="auto-style1" Text="取消" OnClick="btn_cancel_Click" />
+          </td>
+        <td align="left">&nbsp;</td>
+        <td align="left">&nbsp;</td>
+        <td align="left">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td width="120">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
       </tr>
@@ -352,20 +355,183 @@ header, section, footer, aside, article, figure {
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
       </tr>
       <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
       </tr>
     </table>
-    </form>
+  </form>
   </header>
   <footer>
     <p><a href="http://www.neon-kids.com/N/Puan.asp">普安店</a> | <a href="http://www.neon-kids.com/N/Dahua.asp">大华店</a> | <a href="http://www.neon-kids.com/N/Jinhui.asp">金汇店</a> | <a href="http://www.neon-kids.com/N/Shangnan.asp">上南店</a> | <a href="http://www.neon-kids.com/N/Baoshan.asp">宝山店</a> | <a href="http://www.neon-kids.com/N/Minhang.asp">闵行店</a></p>
     <p>总部地址：上海市黄浦区中山南路969号谷泰滨江大厦19F 邮编：200011     </p>
 </footer>
   <!-- end .container --></div>
+
+<map name="Map">
+  <area shape="rect" coords="54,5,172,100" href="welcome.aspx" target="_top">
+  <area shape="rect" coords="177,5,310,101" href="point.aspx" target="_top">
+  <area shape="rect" coords="318,6,447,100" href="money.aspx" target="_top">
+  <area shape="rect" coords="454,6,575,100" href="pay.aspx" target="_top">
+</map>
 </body>
 </html>
