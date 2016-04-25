@@ -22,7 +22,10 @@ public partial class point : System.Web.UI.Page
             }
             else
             {
-                System.Web.HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('没有查询到数据!')</SCRIPT>");
+                str_mysql = "SELECT '-' AS '增加哈宝币', '-' AS '增加赠送哈宝币','-' AS '生成时间'";
+                DS = MySqlHelper.MySqlHelper.Query(str_mysql, LinkString);
+                gv_hbb.DataSource = DS;
+                gv_hbb.DataBind();
             }
 
             str_mysql = "select skf26 from skt3 where skf53=1 and skf20='" + Session["UID"].ToString() + "'";
