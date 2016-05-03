@@ -19,10 +19,13 @@ namespace SMS
         public SMS()
         { }
 
+        //短信发送内容请严格按下面格式发送：.
+        //15902142966用户,您的验证码是:364499，请在3分钟内完成验证.【霓虹儿童广场】
+        //15902142966用户,您刚刚消费获得:500个哈宝币. 【霓虹儿童广场】
         public string send_reg_sms(int int_proindex, string mobile)
         {
             string RanNum = Number(6, false);
-            string content = mobile + "用户,您的验证码是:" + RanNum + " 【霓虹儿童广场】";
+            string content = mobile + "用户,您的验证码是:" + RanNum + "，请在3分钟内完成验证.【霓虹儿童广场】";
             string RequestXML = "";
             string strRequest = "";
 
