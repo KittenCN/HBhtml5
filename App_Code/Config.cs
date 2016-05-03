@@ -20,12 +20,13 @@ public class Config
     {
         string LinkString = "Server=localhost;user id=root;password=;Database=chenkuserdb37;Port=3308;charset=utf8;";
         //读取配置文件config.xml
-        if (File.Exists(HttpContext.Current.Server.MapPath("Config.xml")))
+        string strLocalAdd = "C:\\Config.xml";
+        if (File.Exists(strLocalAdd))
         {
             try
             {
                 XmlDocument xmlCon = new XmlDocument();
-                xmlCon.Load(HttpContext.Current.Server.MapPath("Config.xml"));
+                xmlCon.Load(strLocalAdd);
                 XmlNode xnCon = xmlCon.SelectSingleNode("Config");
                 LinkString = xnCon.SelectSingleNode("LinkString").InnerText;
             }
