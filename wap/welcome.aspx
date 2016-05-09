@@ -36,7 +36,8 @@
     <link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body>
-
+    <form id="form1" runat="server">
+    <div class="am-g">
     <table style="display: inline-table;" width="100%" border="0" cellpadding="0" cellspacing="0">
         <tr>
             <td colspan="16">
@@ -78,9 +79,11 @@
             </td>
         </tr>
     </table>
+    </div>
 
-    <form id="form1" runat="server">
-    <table style="display: inline-table;" width="100%" border="0" cellpadding="0" cellspacing="0" id="app-bar">
+
+    <div class="am-g">
+    <table style="display: inline-table;" width="100%" border="0" cellpadding="0" cellspacing="0">
         <tr>
             <td>
                 <img src="img/money_10.jpg" id="app-content-left" alt="">
@@ -88,12 +91,19 @@
             <td id="app-content">
                    <div id="app-first">
                         <ul class="am-list">
-                          <li class="app-padding-side">
-                              <asp:Button ID="btn_pass" runat="server" Text="修改登录密码" OnClick="btn_pass_Click" />
-                          </li>
-                          <li class="app-align-right">
-                              <div>
-                                  <asp:Label ID="lab_PhoneNUM" runat="server" Text="PhoneNUM"></asp:Label><a href="login.aspx">【退出】</a>
+                            <li>
+                                &nbsp;
+                            </li>
+                          <li>
+                              <div class="am-container">
+                                <div class="am-g">
+                                      <div class="am-u-sm-6">
+                                          <asp:Button ID="btn_pass" runat="server" Text="修改登录密码" OnClick="btn_pass_Click" />
+                                      </div>
+                                      <div class="am-u-sm-6">
+                                          <asp:Label ID="lab_PhoneNUM" runat="server" Text="PhoneNUM"></asp:Label><a href="login.aspx">【退出】</a>
+                                      </div>
+                                </div>
                               </div>
                           </li>
                           <li class="app-padding-side">欢迎您 今天是 <asp:Label ID="lab_currdate" runat="server" Text="1900-01-01"></asp:Label></li>
@@ -173,7 +183,8 @@
             </td>
         </tr>
         </table>
-        </form>
+    </div>
+    <div class="am-g">
     <table style="display: inline-table;" width="100%" border="0" cellpadding="0" cellspacing="0">
         <tr>
             <td>
@@ -181,7 +192,8 @@
             </td>
         </tr>
     </table>
-
+    </div>
+</form>
     <footer data-am-widget="footer" class="am-footer am-footer-default" data-am-footer="{  }">
         <div class="am-footer-switch">
             <a href="http://www.neon-kids.com/N/Puan.asp">普安店</a> | <a href="http://www.neon-kids.com/N/Dahua.asp">大华店</a> | <a href="http://www.neon-kids.com/N/Jinhui.asp">金汇店</a> | <a href="http://www.neon-kids.com/N/Shangnan.asp">上南店</a> | <a href="http://www.neon-kids.com/N/Baoshan.asp">宝山店</a> | <a href="http://www.neon-kids.com/N/Minhang.asp">闵行店</a>
