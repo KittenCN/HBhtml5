@@ -321,7 +321,7 @@ left {
         <td>&nbsp;</td>
         <td width="87">一维码:</td>
         <td class="auto-style4" colspan="3">
-           <img src="../Ajax/QRCode.ashx?CardNum=0"  id="imgQRCode" width="300" height="50" runat="server" style="margin-top: 0px; vertical-align: top; margin-bottom: 0px;" class="auto-style5" />
+           <img src="../Ajax/QRCode.ashx?CardNum=0"  id="imgQRCode" width="540" height="180" runat="server" style="margin-top: 0px; vertical-align: top; margin-bottom: 0px;" class="auto-style5" />
           </td>        
       </tr>
       <tr>

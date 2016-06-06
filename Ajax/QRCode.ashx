@@ -88,11 +88,11 @@ public class QRCode : IHttpHandler, IRequiresSessionState
         {
             //DisableECI = true,  
             //CharacterSet = "UTF-8",  
-            Width = 300,
-            Height = 50
+            Width = 485,
+            Height = 241
         };
         writer = new BarcodeWriter();
-        writer.Format = BarcodeFormat.ITF;
+        writer.Format = BarcodeFormat.CODE_128;
         writer.Options = options;
 
         Bitmap bitmap = writer.Write(codeNumber);
