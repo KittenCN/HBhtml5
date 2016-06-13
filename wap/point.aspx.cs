@@ -13,7 +13,7 @@ public partial class point : System.Web.UI.Page
             string str_userid = Session["UID"].ToString();
 
             //string str_mysql = "SELECT skf77-skf76 AS '增加储值', skf79-skf78 AS '增加哈宝币', skf81-skf80 AS '增加赠送哈宝币',skf82 AS '生成时间' FROM skt7 WHERE skf73='" + str_userid + "'";
-            string str_mysql = "SELECT skf79-skf78 AS '增加哈宝币', skf81-skf80 AS '增加赠送哈宝币',skf82 AS '生成时间' FROM skt7 WHERE (skf79-skf78<>0 or skf81-skf80<>0) and skf73='" + str_userid + "'";
+            string str_mysql = "SELECT skf79-skf78 AS '增加哈宝币', skf81-skf80 AS '增加赠送哈宝币',skf82 AS '生成时间' FROM skt7 WHERE (skf79-skf78<>0 or skf81-skf80<>0) and skf73='" + str_userid + "' ORDER BY skf82 DESC LIMIT 0,20";
             DataSet DS = MySqlHelper.MySqlHelper.Query(str_mysql, LinkString);
             if (DS.Tables[0].Rows.Count > 0 && DS.Tables[0].Rows[0].ItemArray[0].ToString() != null)
             {
